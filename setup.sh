@@ -20,10 +20,25 @@ curl -L "https://github.com/Vesktop/Vesktop/releases/download/v0.4.4/vesktop-0.4
 # Install the downloaded .rpm file
 sudo dnf install -y /tmp/vesktop.rpm
 
-# You can add other programs here, for example:
-# sudo dnf install -y vlc screenkey
+# --- 3. Configure Desktop Environment ---
+echo "Applying desktop tweaks..."
 
-# --- 3. Set Up Virtual Audio Cable ---
+# Set the theme to dark mode
+echo "Enabling dark mode..."
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# Set font scaling to 125% (this makes most UI elements larger)
+echo "Setting UI scaling to 125%..."
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+
+# --- 4. Mute All Physical Microphones ---
+echo "Muting all physical input devices..."
+for source in $(pactl list sources short | grep -v 'monitor' | cut -f1); do
+    pactl set-source-mute $source 1
+done
+echo "Microphones muted."
+
+# --- 5. Set Up Virtual Audio Cable ---
 echo "Setting up virtual audio cable..."
 # Create the virtual output device (the "cable")
 pactl load-module module-null-sink sink_name=virtual_cable sink_properties=device.description="Virtual_Cable"
@@ -33,26 +48,18 @@ pactl load-module module-loopback source=virtual_cable.monitor sink=@DEFAULT_SIN
 
 echo "Audio cable created and active."
 
-# --- 4. Get File from GitHub ---
+# --- 6. Get File from GitHub ---
 echo "Downloading script from GitHub..."
 # Navigate to the Documents folder to keep things tidy
 cd ~/Documents
 
-# **CHOOSE ONE METHOD BELOW**
-
-# Method A: If you want to download an entire repository
-# Replace the URL with the URL of the repository you want.
-# git clone https://github.com/user/repository.git
-
-# Method B: If you only want to download a single file
-# Go to the file on GitHub, click the "Raw" button, and copy that URL.
-# Replace the URL and the desired filename below.
+# Download the Python TTS script
 curl -L "https://raw.githubusercontent.com/Zeqqqe/Python-Text-To-Speech/main/Text%20To%20Speech%20CLI.py" -o "Python TTS.py"
 
 echo "File successfully downloaded to the Documents folder."
 
-# --- 5. Final Message ---
+# --- 7. Final Message ---
 echo ""
 echo "---------------------------------------"
-echo "  zeqqe's Preset finished correctly    "
+echo "  zeqqe's Preset Finished Correctly    "
 echo "---------------------------------------"
