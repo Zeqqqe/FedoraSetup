@@ -9,7 +9,7 @@ echo "You may be asked for your password for software installation."
 
 # --- 2. Install Programs ---
 echo "Installing programs..."
-sudo dnf install -y git pavucontrol python3-pip gparted vim
+sudo dnf install -y git pavucontrol python3-pip gparted vim fastfetch
 
 # --- 2.1. Install Python Packages ---
 echo "Installing Python packages..."
@@ -86,6 +86,7 @@ case "$choice" in
     sleep 0.2
     clear
     echo "Setup files deleted. This script will now self-destruct."
+    fastfetch
     rm -- "$0"
     ;;
   n|N )
