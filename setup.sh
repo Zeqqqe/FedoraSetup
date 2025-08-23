@@ -63,7 +63,33 @@ curl -L "https://raw.githubusercontent.com/Zeqqqe/Python-Text-To-Speech/main/Tex
 echo "File successfully downloaded to the Documents folder."
 
 # --- 7. Final Message ---
+sleep 5
+clear
 echo ""
-echo "---------------------------------------"
-echo "  zeqqe's Preset Finished Correctly    "
-echo "---------------------------------------"
+echo "--- setup.sh successfully ran --- "
+echo "---- setup.sh finished at $(date) ----"
+echo ""
+
+cd "$(dirname "$0")"
+
+# --- 8. Cleanup Menu ---
+# Ask the user if they want to perform cleanup tasks.
+read -p "Would you like to perform cleanup (move config, delete setup files)? (y/n): " choice
+
+case "$choice" in
+  y|Y )
+    echo "Performing cleanup..."
+    # This assumes Vesktop.json and README.md are in the same directory as the script.
+    mv Vesktop.json ~/Documents/
+    rm README.md
+    # This command makes the script delete itself.
+    echo "Setup files deleted. This script will now self-destruct."
+    rm -- "$0"
+    ;;
+  n|N )
+    echo "Skipping cleanup. Exiting."
+    ;;
+  * )
+    echo "Invalid input. Skipping cleanup."
+    ;;
+esac
