@@ -9,7 +9,11 @@ echo "You may be asked for your password for software installation."
 
 # --- 2. Install Programs ---
 echo "Installing programs..."
-sudo dnf install -y git pavucontrol python3-pip gparted
+sudo dnf install -y git pavucontrol python3-pip gparted vim
+
+# --- 2.1. Install Python Packages ---
+echo "Installing Python packages..."
+pip3 install keyboard pyttsx3
 
 # Install Vesktop
 echo "Downloading and installing Vesktop..."
