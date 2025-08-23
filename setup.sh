@@ -63,11 +63,11 @@ curl -L "https://raw.githubusercontent.com/Zeqqqe/Python-Text-To-Speech/main/Tex
 echo "File successfully downloaded to the Documents folder."
 
 # --- 7. Final Message ---
-sleep 5
+sleep 10
 clear
 echo ""
-echo "--- setup.sh successfully ran --- "
-echo "---- setup.sh finished at $(date) ----"
+echo "--- Setup Complete --- "
+echo "---- Finished at $(date +'%H:%M:%S') on $(date +'%Y-%m-%d') ----"
 echo ""
 
 cd "$(dirname "$0")"
@@ -83,6 +83,8 @@ case "$choice" in
     mv Vesktop.json ~/Documents/
     rm README.md
     # This command makes the script delete itself.
+    sleep 0.2
+    clear
     echo "Setup files deleted. This script will now self-destruct."
     rm -- "$0"
     ;;
