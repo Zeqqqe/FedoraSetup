@@ -15,7 +15,7 @@ sudo dnf install -y git pavucontrol python3-pip gparted
 echo "Downloading and installing Vesktop..."
 # Use curl to get the .rpm file and save it in the /tmp directory
 # Replace the URL with the latest version from the Vesktop GitHub releases page
-curl -L "https://github.com/Vesktop/Vesktop/releases/download/v0.4.4/vesktop-0.4.4.x86_64.rpm" -o /tmp/vesktop.rpm
+curl -L "https://github.com/Vencord/Vesktop/releases/download/v1.5.8/vesktop-1.5.8.x86_64.rpm" -o /tmp/vesktop.rpm
 
 # Install the downloaded .rpm file
 sudo dnf install -y /tmp/vesktop.rpm
