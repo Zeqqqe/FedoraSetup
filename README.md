@@ -1,2 +1,3 @@
 This is a random thing i made to setup Fedora's live environment...
-![Fedora Logo](https://www.google.com/search?q=fedora+linux+logo&oq=fedora+linux+logo&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIICAIQABgWGB4yCAgDEAAYFhgeMg0IBBAAGIYDGIAEGIoFMg0IBRAAGIYDGIAEGIoFMg0IBhAAGIYDGIAEGIoFMgoIBxAAGIAEGKIEMgoICBAAGIAEGKIEMgoICRAAGIAEGKIEMgcIChAhGI8CMgcICxAhGI8C0gEINDM4MWowajSoAgGwAgE&client=ms-android-verizon-us-rvc3&sourceid=chrome-mobile&ie=UTF-8#vhid=sLrrcabxS3S3TM&vssid=_hiWraLCoCemlptQPwLWYwAs_40)
+
+[Fedora Logo](https://fedoraproject.org/wiki/File:Logo_fedoralogo.png)
