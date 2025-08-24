@@ -1,3 +1,3 @@
 This is a random thing i made to setup Fedora's live environment...
 
-[Fedora Logo](https://fedoraproject.org/wiki/File:Logo_fedoralogo.png)
+![Fedora Logo](https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_dark-background.png)
